@@ -1,0 +1,29 @@
+{
+  "name": "Pmail",
+  "version": "0.1",
+  "description": "E2E Searchable Encryption",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://mail.google.com/*"],
+      "js": ["popup.js", "content.js"],
+      "css": ["pmail.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "web_accessible_resources": [
+    "utils/jquery-1.10.2.min.js",
+    "utils/openpgp.min.js",
+    "utils/gmail.js",
+    "encrypt.js",
+    "decrypt.js",
+    "search.js",
+    "main.js",
+    "modal.js"
+  ],
+  "permissions": ["http://localhost/*"],
+  "manifest_version": 2
+}
